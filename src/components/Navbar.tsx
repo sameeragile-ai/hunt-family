@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -52,36 +52,36 @@ export const Navbar: React.FC = () => {
       />
 
       {/* Floating Pill Header Wrapper */}
-      <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-4 sm:px-6 pointer-events-none transition-all duration-300 pt-3 sm:pt-4">
+      <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-2.5 sm:px-6 pointer-events-none transition-all duration-300 pt-2.5 sm:pt-4">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className={`pointer-events-auto w-full max-w-6xl transition-all duration-300 rounded-full flex items-center justify-between ${
+          className={`pointer-events-auto w-full max-w-6xl transition-all duration-300 rounded-full flex items-center justify-between gap-1 sm:gap-4 ${
             isScrolled
-              ? 'py-2 sm:py-2.5 px-4 sm:px-6 bg-white/75 backdrop-blur-xl shadow-lg shadow-[#0F1B2D]/5 border border-white/80 ring-1 ring-[#22B8E6]/20'
-              : 'py-3 sm:py-3.5 px-5 sm:px-7 bg-white/90 backdrop-blur-md shadow-sm border border-slate-100/80 ring-1 ring-slate-900/5'
+              ? 'py-2 px-3 sm:py-2.5 sm:px-6 bg-white/85 backdrop-blur-xl shadow-lg shadow-[#0F1B2D]/5 border border-white/80 ring-1 ring-[#22B8E6]/20'
+              : 'py-2.5 px-3.5 sm:py-3.5 sm:px-7 bg-white/95 backdrop-blur-md shadow-sm border border-slate-100/80 ring-1 ring-slate-900/5'
           }`}
         >
           {/* Logo / Brand */}
           <NavLink
             to="/"
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6] rounded-full"
+            className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6] rounded-full shrink-0"
             aria-label="Hunt Family Dentistry - Home"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] p-[2px] transition-transform duration-300 group-hover:scale-105 shadow-sm">
-              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-[#0F1B2D]">
-                <Sparkles className="w-5 h-5 text-[#22B8E6] transition-transform duration-300 group-hover:rotate-12" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] p-[2px] transition-transform duration-300 group-hover:scale-105 shadow-sm shrink-0">
+              <div className="w-full h-full bg-white rounded-[10px] sm:rounded-[14px] flex items-center justify-center text-[#0F1B2D]">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#22B8E6] transition-transform duration-300 group-hover:rotate-12" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-[#0F1B2D] text-base sm:text-lg tracking-tight leading-none">
+              <span className="font-heading font-extrabold text-[#0F1B2D] text-sm sm:text-base lg:text-lg tracking-tight leading-none">
                 HUNT
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22B8E6] to-[#8B7CF6] ml-1">
                   FAMILY
                 </span>
               </span>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#5A6B80] mt-0.5">
+              <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-[#5A6B80] mt-0.5 hidden min-[400px]:block">
                 Dentistry • Frisco, TX
               </span>
             </div>
@@ -117,15 +117,15 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Actions: Phone & Book CTA */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Call button */}
             <a
               href={`tel:${clinicData.contact.phoneRaw}`}
-              className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-[#0F1B2D] hover:text-[#22B8E6] py-2 px-3 rounded-full hover:bg-slate-100/60 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6]"
+              className="hidden md:inline-flex items-center gap-2 text-xs font-semibold text-[#0F1B2D] hover:text-[#22B8E6] py-1.5 px-3 rounded-full hover:bg-slate-100/60 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6]"
               title={`Call ${clinicData.contact.phone}`}
             >
-              <div className="w-7 h-7 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
-                <Phone className="w-3.5 h-3.5" />
+              <div className="w-6 h-6 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
+                <Phone className="w-3 h-3" />
               </div>
               <span className="hidden xl:inline">{clinicData.contact.phone}</span>
               <span className="xl:hidden">Call</span>
@@ -136,21 +136,22 @@ export const Navbar: React.FC = () => {
               href={clinicData.contact.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center gap-2 py-2 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] shadow-md shadow-[#22B8E6]/25 hover:shadow-lg hover:shadow-[#22B8E6]/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] animate-shimmer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7CF6] focus-visible:ring-offset-2"
+              className="relative inline-flex items-center gap-1.5 py-1.5 px-3 sm:py-2 sm:px-5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] shadow-sm sm:shadow-md shadow-[#22B8E6]/25 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] animate-shimmer focus:outline-none shrink-0"
             >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Book Online</span>
+              <Calendar className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Book Online</span>
+              <span className="sm:hidden">Book</span>
             </a>
 
             {/* Mobile Hamburger Button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#0F1B2D] rounded-full hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6]"
+              className="lg:hidden p-1.5 sm:p-2 text-[#0F1B2D] rounded-full hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#22B8E6]"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </motion.div>
@@ -164,10 +165,10 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-30 bg-white/95 backdrop-blur-2xl flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden"
+            className="fixed inset-0 z-30 bg-white/98 backdrop-blur-2xl flex flex-col justify-between pt-20 sm:pt-24 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] px-5 sm:px-6 lg:hidden overflow-y-auto overscroll-contain"
           >
-            <div className="flex flex-col gap-2">
-              <p className="text-xs font-bold uppercase tracking-wider text-[#22B8E6] px-4 py-1">
+            <div className="flex flex-col gap-1.5 sm:gap-2 mb-6">
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#22B8E6] px-4 py-1">
                 Navigation
               </p>
               {navLinks.map((link, idx) => (
@@ -175,13 +176,13 @@ export const Navbar: React.FC = () => {
                   key={link.path}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.05 + 0.1 }}
+                  transition={{ delay: idx * 0.04 + 0.05 }}
                 >
                   <NavLink
                     to={link.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className={({ isActive }) =>
-                      `flex items-center justify-between text-xl font-heading font-semibold py-3 px-4 rounded-2xl transition-colors ${
+                      `flex items-center justify-between text-lg sm:text-xl font-heading font-semibold py-2.5 sm:py-3 px-4 rounded-2xl transition-colors ${
                         isActive
                           ? 'bg-gradient-to-r from-teal-50 to-sky-50 text-[#0F1B2D] border border-teal-100 font-bold'
                           : 'text-[#0F1B2D] hover:bg-slate-50'
@@ -196,26 +197,26 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Drawer Bottom Info */}
-            <div className="border-t border-slate-100 pt-6 flex flex-col gap-4">
-              <div className="flex items-center gap-3 text-sm text-[#5A6B80]">
+            <div className="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#5A6B80]">
                 <MapPin className="w-4 h-4 text-[#22B8E6] shrink-0" />
-                <span>11220 Panther Creek Pkwy #100, Frisco, TX</span>
+                <span className="truncate">11220 Panther Creek Pkwy #100, Frisco, TX</span>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2.5">
                 <a
                   href={`tel:${clinicData.contact.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-slate-100 text-[#0F1B2D] font-semibold text-sm hover:bg-slate-200 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-slate-100 text-[#0F1B2D] font-semibold text-xs sm:text-sm hover:bg-slate-200 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-teal-600" />
+                  <Phone className="w-3.5 h-3.5 text-teal-600" />
                   <span>Call Office</span>
                 </a>
                 <a
                   href={clinicData.contact.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-gradient-to-r from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] text-white font-semibold text-sm shadow-md"
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-gradient-to-r from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] text-white font-semibold text-xs sm:text-sm shadow-md"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3.5 h-3.5" />
                   <span>Book Online</span>
                 </a>
               </div>

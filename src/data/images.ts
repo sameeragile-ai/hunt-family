@@ -3,6 +3,8 @@
  * Centralized here so they can easily be replaced with real clinic photography.
  */
 
+import dentistHeroImage from '../assets/images/dentist_family_hero_1792008733086.jpg';
+
 export interface ImageAsset {
   url: string;
   alt: string;
@@ -12,8 +14,8 @@ export interface ImageAsset {
 export const clinicImages = {
   // Hero section
   heroFamily: {
-    url: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Happy mother and daughter smiling warmly in a bright modern dental clinic',
+    url: dentistHeroImage,
+    alt: 'Dr. Dominique Hunt gently showing dental tools to a happy child and smiling mother in a bright, modern Frisco dental clinic',
     aspectRatio: 'aspect-4/3',
   },
   
@@ -78,7 +80,7 @@ export const clinicImages = {
       alt: 'Calming sedation dentistry for zero-anxiety dental visits',
     },
     restorative: {
-      url: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80',
+      url: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80',
       alt: 'Tooth-colored composite fillings and natural restorative bridges',
     },
   },

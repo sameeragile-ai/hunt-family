@@ -149,23 +149,23 @@ export const ServicesPage: React.FC = () => {
                     </div>
 
                     {/* Book service action */}
-                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                    <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-100 flex flex-col min-[440px]:flex-row items-stretch min-[440px]:items-center justify-between gap-3">
                       <a
                         href={clinicData.contact.bookingUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#34D3B4] to-[#22B8E6] text-white shadow-xs hover:shadow-md transition-all hover:scale-102"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#34D3B4] to-[#22B8E6] text-white shadow-xs hover:shadow-md transition-all hover:scale-102"
                       >
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-4 h-4 shrink-0" />
                         <span>Book Appointment</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                       </a>
 
                       <a
                         href={`tel:${clinicData.contact.phoneRaw}`}
-                        className="text-xs font-bold text-[#5A6B80] hover:text-[#0F1B2D] flex items-center gap-1.5"
+                        className="text-xs font-bold text-[#5A6B80] hover:text-[#0F1B2D] flex items-center justify-center min-[440px]:justify-start gap-1.5 py-1"
                       >
-                        <Phone className="w-3.5 h-3.5 text-teal-600" />
+                        <Phone className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                         <span>(469) 269-0997</span>
                       </a>
                     </div>

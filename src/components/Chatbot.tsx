@@ -162,13 +162,13 @@ export const Chatbot: React.FC = () => {
   return (
     <>
       {/* Floating Toggle Button */}
-      <div className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 z-40">
+      <div className="fixed bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] md:bottom-6 right-3 sm:right-6 z-40">
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label={isOpen ? 'Close dental chat assistant' : 'Open dental chat assistant'}
-          className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] text-white shadow-xl shadow-[#22B8E6]/30 border-2 border-white focus:outline-none focus-visible:ring-4 focus-visible:ring-[#8B7CF6]/50"
+          className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#34D3B4] via-[#22B8E6] to-[#8B7CF6] text-white shadow-xl shadow-[#22B8E6]/30 border-2 border-white focus:outline-none focus-visible:ring-4 focus-visible:ring-[#8B7CF6]/50"
         >
           {isOpen ? (
             <X className="w-6 h-6" />
@@ -338,7 +338,7 @@ export const Chatbot: React.FC = () => {
             </div>
 
             {/* Input Footer */}
-            <div className="p-3 bg-white border-t border-slate-200/80 shrink-0">
+            <div className="p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] sm:pb-3 bg-white border-t border-slate-200/80 shrink-0">
               <div className="flex items-center gap-2">
                 <input
                   ref={inputRef}

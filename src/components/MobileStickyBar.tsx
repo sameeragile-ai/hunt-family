@@ -4,7 +4,7 @@ import { clinicData } from '../data/clinicData';
 
 export const MobileStickyBar: React.FC = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/80 px-4 py-2.5 shadow-2xl shadow-slate-900/10">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/80 px-4 pt-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] shadow-2xl shadow-slate-900/10">
       <div className="flex items-center gap-3 max-w-md mx-auto">
         {/* Call Office Button */}
         <a

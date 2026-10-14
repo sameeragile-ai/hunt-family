@@ -30,27 +30,31 @@ export const TrustMarquee: React.FC = () => {
       <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#FAFCFD] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#FAFCFD] to-transparent z-10 pointer-events-none" />
 
-      <div className="animate-marquee flex items-center gap-8 sm:gap-14">
+      <div className="animate-marquee flex items-center">
         {/* First set */}
-        {items.map((badge, idx) => (
-          <div
-            key={`marquee-1-${idx}`}
-            className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#0F1B2D] whitespace-nowrap px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/50 shadow-2xs"
-          >
-            {getBadgeIcon(badge.icon)}
-            <span>{badge.label}</span>
-          </div>
-        ))}
+        <div className="flex items-center gap-4 sm:gap-8 shrink-0 pr-4 sm:pr-8">
+          {items.map((badge, idx) => (
+            <div
+              key={`marquee-1-${idx}`}
+              className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F1B2D] whitespace-nowrap px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/50 shadow-2xs"
+            >
+              {getBadgeIcon(badge.icon)}
+              <span>{badge.label}</span>
+            </div>
+          ))}
+        </div>
         {/* Duplicate set for seamless continuous loop */}
-        {items.map((badge, idx) => (
-          <div
-            key={`marquee-2-${idx}`}
-            className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#0F1B2D] whitespace-nowrap px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/50 shadow-2xs"
-          >
-            {getBadgeIcon(badge.icon)}
-            <span>{badge.label}</span>
-          </div>
-        ))}
+        <div className="flex items-center gap-4 sm:gap-8 shrink-0 pr-4 sm:pr-8" aria-hidden="true">
+          {items.map((badge, idx) => (
+            <div
+              key={`marquee-2-${idx}`}
+              className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F1B2D] whitespace-nowrap px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/50 shadow-2xs"
+            >
+              {getBadgeIcon(badge.icon)}
+              <span>{badge.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
