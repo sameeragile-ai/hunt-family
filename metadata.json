@@ -1,0 +1,6 @@
+{
+  "name": "Hunt Family Dentistry - Gentle & Modern Care in Frisco, TX",
+  "description": "Award-winning family, cosmetic, and emergency dentistry in Frisco, TX by Dr. Dominique Hunt. Injection-free numbing, 3D scanning, membership plans, and easy online booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
